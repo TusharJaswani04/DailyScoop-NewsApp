@@ -1,0 +1,187 @@
+
+/* DailyScoop News App Styles */
+
+:root {
+  --primary-color: #0d6efd;
+  --secondary-color: #6c757d;
+  --success-color: #198754;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #0dcaf0;
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+}
+
+/* Dark theme variables */
+[data-theme="dark"] {
+  --bs-body-bg: #1a1a1a;
+  --bs-body-color: #ffffff;
+  --bs-card-bg: #2d2d2d;
+  --bs-border-color: #404040;
+}
+
+/* Global styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: var(--bs-body-bg, #ffffff);
+  color: var(--bs-body-color, #212529);
+}
+
+/* News card styles */
+.news-card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.news-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+}
+
+.news-image {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.article-image {
+  height: 300px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.category-badge {
+  font-size: 0.75rem;
+  max-width: 120px;
+}
+
+/* Share popup */
+.share-popup {
+  z-index: 1000;
+  min-width: 200px;
+  border: 1px solid #dee2e6;
+}
+
+/* Navbar styles */
+.navbar {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+/* Loading and error states */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Form styles */
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Button hover effects */
+.btn {
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Article content */
+.article-content {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .display-4 {
+    font-size: 2rem;
+  }
+
+  .display-5 {
+    font-size: 1.75rem;
+  }
+
+  .news-image {
+    height: 180px;
+  }
+
+  .article-image {
+    height: 250px;
+  }
+}
+
+/* Dark theme card styles */
+[data-theme="dark"] .card {
+  background-color: var(--bs-card-bg);
+  border-color: var(--bs-border-color);
+}
+
+[data-theme="dark"] .navbar {
+  background-color: #2d2d2d !important;
+  border-bottom-color: #404040;
+}
+
+[data-theme="dark"] .bg-light {
+  background-color: #2d2d2d !important;
+}
+
+/* Custom utilities */
+.text-truncate-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.text-truncate-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Animation for news cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.news-card {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
